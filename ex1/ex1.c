@@ -19,6 +19,7 @@ int main(void)
     {
         printf("Hello from child x:%d (rc: %d)\n", x, rc);
         x++;
+        printf("Hello from child x:%d (rc: %d)\n", x, rc);
     }
     else
     {
