@@ -8,7 +8,24 @@
 
 int main(void)
 {
-    // Your code here
+    int x = 100;
+    int rc = fork();
+
+    if (rc < 0)
+    {
+        fprintf(stderr, "fork failed");
+    }
+    else if (rc == 0)
+    {
+        printf("Hello from child x:%d (rc: %d)\n", x, rc);
+        x++;
+        printf("Hello from child x:%d (rc: %d)\n", x, rc);
+    }
+    else
+    {
+        printf("parent x: %d and (rc: %d)\n", x, rc);
+        x--;
+    }
 
     return 0;
 }
